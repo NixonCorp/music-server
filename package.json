@@ -1,0 +1,26 @@
+{
+    "name": "music-server",
+    "description": "music-server",
+    "dependencies": {
+        "browsermob-proxy": "^1.0.9",
+        "chromedriver": "^119.0.1",
+        "easyimage": "^2.1.0",
+        "headless": "^1.2.0",
+        "htmlparser2": "^9.0.0",
+        "intl": "^1.2.5",
+        "media-type": "^0.3.1",
+        "metaviewport-parser": "^0.0.1",
+        "node-html-parser": "^6.1.11",
+        "rimraf": "^2.6.1",
+        "selenium-webdriver": "^4.15.0",
+        "uuid": "^3.0.1"
+    },
+    "devDependencies": {
+        "expect.js": "^0.3.1",
+        "express": "^4.15.2",
+        "mocha": "^10.2.0"
+    },
+    "scripts": {
+        "start": "node server.js"
+    }
+}
