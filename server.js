@@ -20,7 +20,7 @@ const requestListener = (req, res) => {
       console.log(JSON.parse(body).url)
     const parser = new Parser();
     const html = await parser.emulate(JSON.parse(body).url);
-    res.end(JSON.stringify({ items: JSON.parse(body).url }))
+    res.end(JSON.stringify({ items: html }))
     // const root = parse(html);
 
     // const arr = Array.from(root.querySelectorAll('.mainSongs .item .play, .mainSongs .item .desc, .mainSongs .item .duration'))
