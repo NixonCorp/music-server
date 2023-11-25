@@ -17,10 +17,10 @@ const requestListener = (req, res) => {
     req.on('data', async (ch) => {
       body += ch;
       res.writeHead(200);
-
+      console.log(JSON.parse(body).url)
     const parser = new Parser();
     const html = await parser.emulate(JSON.parse(body).url);
-    res.end(JSON.stringify({ items: html }))
+    res.end(JSON.stringify({ items: JSON.parse(body).url }))
     // const root = parse(html);
 
     // const arr = Array.from(root.querySelectorAll('.mainSongs .item .play, .mainSongs .item .desc, .mainSongs .item .duration'))
