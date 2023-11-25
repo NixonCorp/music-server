@@ -20,26 +20,27 @@ const requestListener = (req, res) => {
 
     const parser = new Parser();
     const html = await parser.emulate(JSON.parse(body).url);
-    const root = parse(html);
+    res.end(JSON.stringify({ items: html }))
+    // const root = parse(html);
 
-    const arr = Array.from(root.querySelectorAll('.mainSongs .item .play, .mainSongs .item .desc, .mainSongs .item .duration'))
-    const chunkedArr = chunk(arr, 3)
-    const objArr = [];
+    // const arr = Array.from(root.querySelectorAll('.mainSongs .item .play, .mainSongs .item .desc, .mainSongs .item .duration'))
+    // const chunkedArr = chunk(arr, 3)
+    // const objArr = [];
 
-    chunkedArr.forEach((value) => {
-
-
-      objArr.push({
-        src: value[0].getAttribute('data-url').trim(),
-        artist: value[1].childNodes[1].childNodes[1].innerText.trim(),
-        trackName: value[1].childNodes[1].childNodes[3].innerText.trim(),
-        duration: value[2].innerText.trim()
-      })
+    // chunkedArr.forEach((value) => {
 
 
-    })
+    //   objArr.push({
+    //     src: value[0].getAttribute('data-url').trim(),
+    //     artist: value[1].childNodes[1].childNodes[1].innerText.trim(),
+    //     trackName: value[1].childNodes[1].childNodes[3].innerText.trim(),
+    //     duration: value[2].innerText.trim()
+    //   })
 
-    res.end(JSON.stringify({ items: objArr }))
+
+    // })
+
+    // res.end(JSON.stringify({ items: objArr }))
   });
   
     
